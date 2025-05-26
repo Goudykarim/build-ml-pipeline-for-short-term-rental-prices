@@ -1,7 +1,13 @@
-# Build an ML Pipeline for Short-Term Rental Prices in NYC
-You are working for a property management company renting rooms and properties for short periods of 
-time on various rental platforms. You need to estimate the typical price for a given property based 
-on the price of similar properties. Your company receives new data in bulk every week. The model needs 
+Build an ML Pipeline for Short-Term Rental Prices in NYC
+IMPORTANT SUBMISSION LINKS:
+
+My GitHub Repository: https://github.com/Goudykarim/build-ml-pipeline-for-short-term-rental-prices
+
+My Weights & Biases Project: https://wandb.ai/karimgoudy-confidential/nyc_airbnb?nw=nwuserkarimgoudy
+
+We are working for a property management company renting rooms and properties for short periods of
+time on various rental platforms. We need to estimate the typical price for a given property based
+on the price of similar properties. The company receives new data in bulk every week. The model needs
 to be retrained with the same cadence, necessitating an end-to-end pipeline that can be reused.
 
 In this project you will build such a pipeline.
@@ -560,6 +566,20 @@ This will drop rows in the dataset that are not in the proper geolocation.
 Then commit your change, make a new release (for example ``1.0.1``) and retry (of course you need to use 
 ``-v 1.0.1`` when calling mlflow this time). Now the run should succeed and voit la', 
 you have trained your new model on the new data.
+
+## Project Summary & Enhancements
+
+This project successfully built an MLOps pipeline for predicting NYC short-term rental prices. Key steps included data ingestion, automated cleaning and validation, Random Forest model training with hyperparameter tuning via Hydra, and versioned releases.
+
+A notable challenge was ensuring dependency compatibility for various pipeline components, which was resolved by careful version pinning in the respective conda.yml files (e.g., for the EDA and data_check steps). The process highlighted the importance of robust testing (data and model) and version control in MLOps. The transition from pandas-profiling to ydata-profiling was also a key adaptation to work with modern pandas versions.
+
+### For future enhancements, I would consider:
+
+ - Implementing more sophisticated feature engineering for text data (e.g., using word embeddings instead of TF-IDF).
+
+ - Exploring other regression models like XGBoost or LightGBM and comparing their performance.
+
+ - Integrating automated CI/CD for pipeline testing and deployment.
 
 ## In case of errors
 
